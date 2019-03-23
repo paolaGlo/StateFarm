@@ -31,17 +31,22 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class Driver {
 
 	private static final Logger LOGGER = LogManager.getLogger(AutomationDataDaoImpl.class);
-	private WebDriver driver;
+	private static WebDriver driver;
 	private Properties automationProperties;
 
 	private Driver() {
 	}
 
-	public WebDriver getDriver() {
+	public static WebDriver getDriver() {
 		return driver;
 	}
 
-	public WebDriver setUp() throws Exception {
+	public static void setUp() throws Exception {
+		Driver driver = new Driver();
+		driver.setDriverUp();
+	}
+
+	public void setDriverUp() throws Exception {
 		if (driver == null) {
 			String targetDriver = System.getProperty("driver");
 			loadAutomationProperties();
@@ -65,7 +70,13 @@ public class Driver {
 				setChrome();
 			}
 		}
-		return driver;
+	}
+
+	public static void closeDriver() {
+		if (driver != null) {
+			driver.quit();
+			driver = null;
+		}
 	}
 
 	public void setFirefox() {
