@@ -22,6 +22,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
+import org.testng.asserts.SoftAssert;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
@@ -40,10 +41,14 @@ public class BaseTest {
 	protected ExtentTest testLogger;
 	protected ExtentReports report;
 	protected ExtentHtmlReporter htmlReport;
+	protected Pages page;
+	protected SoftAssert softAssert;
 
 	@BeforeTest(alwaysRun = true)
 	public void reportSetUp() {
 		String reportPath = System.getProperty("user.dir") + "/test-output/report.html";
+		page = new Pages();
+		softAssert = new SoftAssert();
 
 		htmlReport = new ExtentHtmlReporter(reportPath);
 		htmlReport.config().setDocumentTitle("StateFarm Automation Report");
