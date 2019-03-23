@@ -56,7 +56,7 @@ public class BaseTest {
 		report = new ExtentReports();
 		report.attachReporter(htmlReport);
 		report.setSystemInfo("environment", "test");
-		report.setSystemInfo("browser", "b");
+		report.setSystemInfo("browser", System.getProperty("driver"));
 		report.setSystemInfo("OS", System.getProperty("os.name"));
 	}
 
