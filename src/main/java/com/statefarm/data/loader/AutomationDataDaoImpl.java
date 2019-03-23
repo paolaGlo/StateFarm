@@ -23,7 +23,6 @@ import com.statefarm.automation.exception.AutomationException;
 import com.statefarm.data.dao.AutomationDataDao;
 
 /**
- * Class loads automation properties. connects and load data from database.
  * 
  * @author paola Gloria
  *
