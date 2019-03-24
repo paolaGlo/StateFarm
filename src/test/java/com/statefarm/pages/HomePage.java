@@ -25,4 +25,13 @@ public class HomePage {
 	
 	@FindBy(xpath = "//span[@class='a-price']")
 	public List<WebElement> itemsPrice;
+	
+	@FindBy(id="file-upload")
+	public WebElement uploadFile;
+	
+	@FindBy(id="file-submit")
+	public WebElement submitFile;
+	
+	@FindBy(id="uploaded-files")
+	public WebElement fileSuccesfullyUploaded;
 }
