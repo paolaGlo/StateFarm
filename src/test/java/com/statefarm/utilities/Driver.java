@@ -113,6 +113,7 @@ public class Driver {
 		final String URL = getSauceLabURL();
 
 		driver = new RemoteWebDriver(new URL(URL), caps);
+		//to allow testing of file uploads using files present in local environment
 		((RemoteWebDriver) driver).setFileDetector(new LocalFileDetector());
 	}
 
