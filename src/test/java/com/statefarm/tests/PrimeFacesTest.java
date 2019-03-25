@@ -14,4 +14,9 @@ public class PrimeFacesTest extends BaseTest {
 		Driver.getDriver().get("https://www.primefaces.org/showcase/ui/misc/effect.xhtml");
 		testLogger.info("practice clicking");
 	}
+	
+	@Test
+	public void testingBranching() {
+		System.out.println("From Feature");
+	}
 }
