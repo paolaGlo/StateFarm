@@ -12,6 +12,6 @@ public class PrimeFaces {
 		PageFactory.initElements(Driver.getDriver(), this);
 	}
 	
-	@FindBy()
-	public WebElement el;
+	@FindBy(id="puff")
+	public WebElement puff;
 }

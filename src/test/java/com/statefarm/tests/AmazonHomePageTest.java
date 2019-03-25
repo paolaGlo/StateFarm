@@ -1,6 +1,5 @@
 package com.statefarm.tests;
 
-import static org.junit.Assert.assertTrue;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
@@ -14,6 +13,15 @@ import com.statefarm.utilities.Driver;
 
 public class AmazonHomePageTest extends BaseTest {
 
+	@Test
+	public void hoverOverMenu() {
+		testLogger = report.createTest("hoverOverMenu");
+		testLogger.info("Navigate to Amazon");
+		Driver.getDriver().get("https://www.amazon.com/");
+		actions.moveToElement(page.home().AccountAndList).perform();
+		assertTrue(page.home().yourAccount.isDisplayed(), "youraccount option menu is displayed: ");
+	}
+	
 	@Test
 	public void counItemsAmazon() {
 		testLogger = report.createTest("testing");
