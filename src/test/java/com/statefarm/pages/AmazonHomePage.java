@@ -25,4 +25,10 @@ public class AmazonHomePage {
 	
 	@FindBy(xpath = "//span[@class='a-price']")
 	public List<WebElement> itemsPrice;
+	
+	@FindBy(id="nav-link-accountList")
+	public WebElement AccountAndList;
+	
+	@FindBy(xpath="//span[contains(text(),'Your Account')]")
+	public WebElement yourAccount;
 }

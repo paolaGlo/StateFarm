@@ -17,6 +17,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.lf5.util.DateFormatManager;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -43,6 +44,7 @@ public class BaseTest {
 	protected ExtentHtmlReporter htmlReport;
 	protected Pages page;
 	protected SoftAssert softAssert;
+	protected Actions actions;
 
 	@BeforeTest(alwaysRun = true)
 	public void reportSetUp() {
@@ -65,6 +67,8 @@ public class BaseTest {
 		Driver.setUp();
 		Driver.getDriver().manage().timeouts().implicitlyWait(6, TimeUnit.SECONDS);
 		Driver.getDriver().manage().window().maximize();
+		actions = new Actions(Driver.getDriver());
+
 	}
 
 	@AfterMethod(alwaysRun = true)
