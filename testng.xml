@@ -3,7 +3,11 @@
 <suite name="Suite">
   <test thread-count="5" name="Test">
     <classes>
-      <class name="com.statefarm.tests.Test1"/>
+      <class name="com.statefarm.tests.PrimeFacesTest"/>
+      <class name="com.statefarm.utilities.BaseTest"/>
+      <class name="com.statefarm.tests.TelerikTest"/>
+      <class name="com.statefarm.tests.InternetHerokuappTest"/>
+      <class name="com.statefarm.tests.AmazonHomePageTest"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
