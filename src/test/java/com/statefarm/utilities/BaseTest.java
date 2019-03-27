@@ -15,6 +15,7 @@ import org.apache.commons.io.FileUtils;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.lf5.util.DateFormatManager;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.interactions.Actions;
@@ -47,6 +48,7 @@ public class BaseTest {
 	protected SoftAssert softAssert;
 	protected Actions actions;
 	protected WebDriverWait wait;
+	protected Alert alert;
 
 	@BeforeTest(alwaysRun = true)
 	public void reportSetUp() {
