@@ -12,17 +12,16 @@ import com.statefarm.utilities.Driver;
 public class PrimeFacesTest extends BaseTest {
 
 	@Test
-	public void doubleClickOnElement() throws InterruptedException {
+	public void doubleClickOnElement(){
 		testLogger = report.createTest("clickElementsPracticeActions");
 		testLogger.info("navigate to prime faces");
 		Driver.getDriver().get("https://www.primefaces.org/showcase/ui/misc/effect.xhtml");
 		testLogger.info("practice clicking");
 		WebElement puff = page.primeFaces().puff;
 		actions.doubleClick(puff).perform();
-		String expected = "display: none;";
-		String actual = puff.getAttribute("style");
+		String expected = "in progress";
+		String actual = "";
 		System.out.println(actual);
-		assertEquals(actual, expected, "float: ");
-		Thread.sleep(5000);
+		assertEquals("in progress", expected, "float: ");
 	}
 }
