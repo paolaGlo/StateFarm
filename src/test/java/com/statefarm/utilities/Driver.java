@@ -29,7 +29,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
  *
  */
 public class Driver {
-
+	
 	private static final Logger LOGGER = LogManager.getLogger(Driver.class);
 	private static WebDriver driver;
 	private Properties automationProperties;
