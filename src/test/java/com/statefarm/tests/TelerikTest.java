@@ -15,7 +15,7 @@ import com.statefarm.utilities.Driver;
 public class TelerikTest extends BaseTest {
 
 	@Test
-	public void dragAndDrop() {
+	public void dragAndDrop() throws Exception {
 		testLogger = report.createTest("dragAndDrop");
 		testLogger.info("Navigat to Telerik");
 		Driver.getDriver().get("https://demos.telerik.com/kendo-ui/dragdrop/index");
@@ -29,7 +29,7 @@ public class TelerikTest extends BaseTest {
 	}
 
 	@Test
-	public void iframeCookies() {
+	public void iframeCookies() throws Exception {
 		testLogger = report.createTest("iframeCookies");
 		testLogger.info("Navigat to Telerik");
 		Driver.getDriver().get("https://demos.telerik.com/kendo-ui/dragdrop/index");

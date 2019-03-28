@@ -12,28 +12,28 @@ public class Pages {
 	private PrimeFaces primeFaces;
 	private Telerik telerik;
 
-	public PrimeFaces primeFaces() {
+	public PrimeFaces primeFaces() throws Exception {
 		if (primeFaces == null) {
 			primeFaces = new PrimeFaces();
 		}
 		return primeFaces;
 	}
 
-	public InternetHerokuapp herokuapp() {
+	public InternetHerokuapp herokuapp() throws Exception {
 		if (herokuapp == null) {
 			herokuapp = new InternetHerokuapp();
 		}
 		return herokuapp;
 	}
 
-	public AmazonHomePage home() {
+	public AmazonHomePage home() throws Exception {
 		if (homePage == null) {
 			homePage = new AmazonHomePage();
 		}
 		return homePage;
 	}
 	
-	public Telerik telerick() {
+	public Telerik telerick() throws Exception {
 		if(telerik == null) {
 			telerik = new Telerik();
 		}

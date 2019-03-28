@@ -8,7 +8,7 @@ import com.statefarm.utilities.Driver;
 
 public class PrimeFaces {
 
-	public PrimeFaces() {
+	public PrimeFaces() throws Exception {
 		PageFactory.initElements(Driver.getDriver(), this);
 	}
 	

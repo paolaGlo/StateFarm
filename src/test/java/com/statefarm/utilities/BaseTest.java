@@ -6,7 +6,6 @@ package com.statefarm.utilities;
 
 import java.io.File;
 import java.io.IOException;
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
@@ -14,10 +13,10 @@ import java.util.concurrent.TimeUnit;
 import org.apache.commons.io.FileUtils;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.apache.log4j.lf5.util.DateFormatManager;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
@@ -53,9 +52,6 @@ public class BaseTest {
 	@BeforeTest(alwaysRun = true)
 	public void reportSetUp() {
 		String reportPath = System.getProperty("user.dir") + "/test-output/report.html";
-		page = new Pages();
-		softAssert = new SoftAssert();
-
 		htmlReport = new ExtentHtmlReporter(reportPath);
 		htmlReport.config().setDocumentTitle("StateFarm Automation Report");
 		htmlReport.config().setReportName("Automated Regression");
@@ -68,16 +64,17 @@ public class BaseTest {
 
 	@BeforeMethod(alwaysRun = true)
 	public void testSetUP() throws Exception {
-		Driver.setUp();
 		Driver.getDriver().manage().timeouts().implicitlyWait(6, TimeUnit.SECONDS);
 		Driver.getDriver().manage().window().maximize();
 		actions = new Actions(Driver.getDriver());
 		wait = new WebDriverWait(Driver.getDriver(), 5);
+		page = new Pages();
+		softAssert = new SoftAssert();
 
 	}
 
 	@AfterMethod(alwaysRun = true)
-	public void tearDown(ITestResult result) throws IOException {
+	public void tearDown(ITestResult result) throws WebDriverException, Exception {
 		if (result.getStatus() == ITestResult.FAILURE) {
 			String screenshot = getScreenshot(result.getName());
 			testLogger.addScreenCaptureFromPath(screenshot);
@@ -98,7 +95,7 @@ public class BaseTest {
 		loader.loadData(dataSetName);
 	}
 
-	public String getScreenshot(String testResultName) {
+	public String getScreenshot(String testResultName) throws WebDriverException, Exception {
 		String time = new SimpleDateFormat("yyyyMMdd_hhmmss").format(new Date());
 		File source = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.FILE);
 		String target = System.getProperty("user.dir") + "test-output/screenshots/" + time + testResultName + ".png";

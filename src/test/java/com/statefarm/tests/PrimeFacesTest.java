@@ -12,7 +12,7 @@ import com.statefarm.utilities.Driver;
 public class PrimeFacesTest extends BaseTest {
 
 	@Test
-	public void doubleClickOnElement(){
+	public void doubleClickOnElement() throws Exception{
 		testLogger = report.createTest("clickElementsPracticeActions");
 		testLogger.info("navigate to prime faces");
 		Driver.getDriver().get("https://www.primefaces.org/showcase/ui/misc/effect.xhtml");

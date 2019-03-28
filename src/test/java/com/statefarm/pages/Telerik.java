@@ -8,7 +8,7 @@ import com.statefarm.utilities.Driver;
 
 public class Telerik {
 
-	public Telerik() {
+	public Telerik() throws Exception {
 		PageFactory.initElements(Driver.getDriver(), this);
 	}
 	

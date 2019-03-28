@@ -14,7 +14,7 @@ import com.statefarm.utilities.Driver;
 public class AmazonHomePageTest extends BaseTest {
 
 	@Test
-	public void hoverOverMenu() {
+	public void hoverOverMenu() throws Exception {
 		testLogger = report.createTest("hoverOverMenu");
 		testLogger.info("Navigate to Amazon");
 		Driver.getDriver().get("https://www.amazon.com/");
@@ -23,7 +23,7 @@ public class AmazonHomePageTest extends BaseTest {
 	}
 	
 	@Test
-	public void counItemsAmazon() {
+	public void counItemsAmazon() throws Exception {
 		testLogger = report.createTest("testing");
 		testLogger.info("navigate to amazon");
 		Driver.getDriver().get("https://www.amazon.com/");
@@ -40,7 +40,7 @@ public class AmazonHomePageTest extends BaseTest {
 	}
 	
 	@Test
-	public void radScoresFromMyOwnHtmlTable(){
+	public void radScoresFromMyOwnHtmlTable() throws Exception{
 		testLogger = report.createTest("radScores from table created by me");
 		testLogger.info("navigate to table");
 		Driver.getDriver().get("file:///C:/Users/paoh4/ws/statefarm/StateFarm/src/test/resources/webtable.html");

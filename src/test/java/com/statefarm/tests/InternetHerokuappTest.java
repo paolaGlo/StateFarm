@@ -11,7 +11,7 @@ import com.statefarm.utilities.Driver;
 public class InternetHerokuappTest extends BaseTest {
 
 	@Test(priority = 1)
-	public void uploadFile() {
+	public void uploadFile() throws Exception {
 		testLogger = report.createTest("uploadFile");
 		testLogger.info("Navigate to internet hero upload page");
 		Driver.getDriver().get("http://the-internet.herokuapp.com/upload");
@@ -26,7 +26,7 @@ public class InternetHerokuappTest extends BaseTest {
 	}
 
 	@Test (priority = 2)
-	public void alertHandle() throws InterruptedException {
+	public void alertHandle() throws Exception {
 		testLogger = report.createTest("alertHandle");
 		testLogger.info("Navigate to internet hero javascript_alerts page");
 		Driver.getDriver().get("http://the-internet.herokuapp.com/javascript_alerts");

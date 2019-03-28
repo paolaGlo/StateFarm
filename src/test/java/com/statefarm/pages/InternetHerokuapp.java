@@ -8,7 +8,7 @@ import com.statefarm.utilities.Driver;
 
 public class InternetHerokuapp {
 
-	public InternetHerokuapp(){
+	public InternetHerokuapp() throws Exception{
 		PageFactory.initElements(Driver.getDriver(), this);
 	}
 	

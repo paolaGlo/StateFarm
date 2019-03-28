@@ -10,7 +10,7 @@ import com.statefarm.utilities.Driver;
 
 public class AmazonHomePage {
 
-	public AmazonHomePage() {
+	public AmazonHomePage() throws Exception {
 		PageFactory.initElements(Driver.getDriver(), this);
 	}
 
