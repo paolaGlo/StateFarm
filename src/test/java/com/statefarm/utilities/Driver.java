@@ -8,11 +8,13 @@ import java.io.IOException;
 import java.net.URL;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.LocalFileDetector;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -87,10 +89,13 @@ public class Driver {
 //	}
 
 	public static void setHubChromeConfig() throws IOException {
-		final ChromeOptions caps = new ChromeOptions();
-		final String URL = ConfigReader.getProperty("hubUrl");
+		DesiredCapabilities caps = DesiredCapabilities.chrome();
+		caps.setPlatform(Platform.ANY);
+		//final String URL = ConfigReader.getProperty("hubUrl");
 
 		driver = new RemoteWebDriver(new URL("http://13.52.184.173:4444/wd/hub"), caps);
+		((RemoteWebDriver) driver).setFileDetector(new LocalFileDetector());
+
 	}
 
 	public static void setSauseChromeConfig() throws IOException {

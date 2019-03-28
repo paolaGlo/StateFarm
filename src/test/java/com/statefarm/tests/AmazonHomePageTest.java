@@ -39,7 +39,7 @@ public class AmazonHomePageTest extends BaseTest {
 		softAssert.assertAll();
 	}
 	
-	@Test
+	//@Test
 	public void radScoresFromMyOwnHtmlTable() throws Exception{
 		testLogger = report.createTest("radScores from table created by me");
 		testLogger.info("navigate to table");
