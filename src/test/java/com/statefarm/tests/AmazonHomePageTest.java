@@ -34,7 +34,7 @@ public class AmazonHomePageTest extends BaseTest {
 		List<WebElement> itemPrice = page.home().itemsPrice;
 		int itemCount = items.size();
 		int priceCount = itemPrice.size();
-		softAssert.assertTrue(itemCount < 10, "itemCount<10: ");
+		softAssert.assertTrue(itemCount > 10, "itemCount<10: ");
 		softAssert.assertTrue(priceCount > 10, "priceCount>10: ");
 		softAssert.assertAll();
 	}
